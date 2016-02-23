@@ -1,0 +1,23 @@
+
+platform :ios, '8.0'
+use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'MyVideoBlog' do
+pod 'AWSCore'
+pod 'AWSAutoScaling'
+pod 'AWSCloudWatch'
+pod 'AWSDynamoDB'
+pod 'AWSEC2'
+pod 'AWSElasticLoadBalancing'
+pod 'AWSKinesis'
+pod 'AWSLambda'
+pod 'AWSMachineLearning'
+pod 'AWSMobileAnalytics'
+pod 'AWSS3'
+pod 'AWSSES'
+pod 'AWSSimpleDB'
+pod 'AWSSNS'
+pod 'AWSSQS'
+pod 'AWSCognito'
+end
