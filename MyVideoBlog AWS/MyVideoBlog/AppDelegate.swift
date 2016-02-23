@@ -2,6 +2,10 @@
 
 import UIKit
 
+import AWSCore
+import AWSCognito
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+            // Activar el logger de AWS
+            
+            AWSLogger.defaultLogger().logLevel = .Verbose
+            
+            // Pasos minimos para chequear la validez del SDK de AWS
         
+            let creditialsProvider = AWSCognitoCredentialsProvider(regionType: .EUWest1,
+                identityPoolId: "eu-west-1:f2ebf247-20b9-4d34-9b32-906290dbe0c3")
+            
+            let configuration = AWSServiceConfiguration(region: .EUWest1, credentialsProvider: creditialsProvider)
+            AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+            
+        
+            let syncClient = AWSCognito.defaultCognito()
+            
+            // Create a record in a dataset and synchronize with the server
+            let dataset = syncClient.openOrCreateDataset("MisDatos")
+            dataset.setString("myValue", forKey:"myKey")
+            dataset.synchronize().continueWithBlock {(task: AWSTask!) -> AnyObject! in
+                
+                print("la paz en el mundo")
+                
+                return nil
+                
+            }
+
+            
             
             let notificationSettings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil )
             UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)

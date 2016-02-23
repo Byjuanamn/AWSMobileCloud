@@ -20,6 +20,8 @@
 		5DDA01E51C7C79E400E3A624 /* DetailPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDA01E41C7C79E400E3A624 /* DetailPostController.swift */; };
 		5DDD9CA61C7659160066BA1A /* MyTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD9CA51C7659160066BA1A /* MyTimelineController.swift */; };
 		5DDD9CA81C765F5B0066BA1A /* ViewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD9CA71C765F5B0066BA1A /* ViewPostController.swift */; };
+		5DEFD4681C7D18FA00CE59C5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEFD4661C7D18FA00CE59C5 /* FBSDKCoreKit.framework */; };
+		5DEFD4691C7D18FA00CE59C5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEFD4671C7D18FA00CE59C5 /* FBSDKLoginKit.framework */; };
 		8B73DF3F1C7CEA940072550B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8B73DF3E1C7CEA940072550B /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +42,10 @@
 		5DDA01E41C7C79E400E3A624 /* DetailPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostController.swift; sourceTree = "<group>"; };
 		5DDD9CA51C7659160066BA1A /* MyTimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTimelineController.swift; sourceTree = "<group>"; };
 		5DDD9CA71C765F5B0066BA1A /* ViewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostController.swift; sourceTree = "<group>"; };
+		5DEFD4661C7D18FA00CE59C5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5DEFD4671C7D18FA00CE59C5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		72CC163DDD9C4CA48B21FB95 /* Pods-MyVideoBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyVideoBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyVideoBlog/Pods-MyVideoBlog.debug.xcconfig"; sourceTree = "<group>"; };
-		8B73DF3E1C7CEA940072550B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8B73DF3E1C7CEA940072550B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E845D0816362F4FAD9F29854 /* Pods-MyVideoBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyVideoBlog.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyVideoBlog/Pods-MyVideoBlog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +55,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D589B5C1C72792C00707347 /* libxml2.2.tbd in Frameworks */,
+				5DEFD4681C7D18FA00CE59C5 /* FBSDKCoreKit.framework in Frameworks */,
+				5DEFD4691C7D18FA00CE59C5 /* FBSDKLoginKit.framework in Frameworks */,
 				1D34828D1031FBD04C3CB2C8 /* Pods_MyVideoBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +67,8 @@
 		5D589B351C72723500707347 = {
 			isa = PBXGroup;
 			children = (
+				5DEFD4661C7D18FA00CE59C5 /* FBSDKCoreKit.framework */,
+				5DEFD4671C7D18FA00CE59C5 /* FBSDKLoginKit.framework */,
 				8B73DF3E1C7CEA940072550B /* Podfile */,
 				5D589B5B1C72792C00707347 /* libxml2.2.tbd */,
 				5D589B401C72723500707347 /* MyVideoBlog */,
