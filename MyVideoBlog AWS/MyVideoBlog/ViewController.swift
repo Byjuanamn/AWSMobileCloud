@@ -126,7 +126,7 @@ class ViewController: UIViewController {
         
         
         
-        print("El creditial ID actual es ---> \(creditialsProvider.identityId) \(creditialsProvider.identityProvider) \(creditialsProvider.identityPoolId)")
+        print("El creditial ID actual es ---> \(creditialsProvider!.identityId) \(creditialsProvider!.identityProvider) \(creditialsProvider!.identityPoolId)")
         
         
         
