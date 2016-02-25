@@ -48,7 +48,8 @@ class ViewController: UIViewController {
             
             let login = FBSDKLoginManager()
             
-            login.logInWithPublishPermissions(["public_profile"],
+            
+            login.logInWithReadPermissions(["public_profile"],
                 fromViewController: self,
                 handler: { ( result: FBSDKLoginManagerLoginResult!, error : NSError!) -> Void in
                 
@@ -94,6 +95,12 @@ class ViewController: UIViewController {
     
     func profileUserData (notication : NSNotification){
         
+        let userI = notication.userInfo
+        let profile = userI!["FBSDKProfileNew"]
+        
+        print("Tenemos cambio de token del usuario -> \(profile) ")
+        
+        
     }
     
     
@@ -128,9 +135,6 @@ class ViewController: UIViewController {
         
         print("El creditial ID actual es ---> \(creditialsProvider!.identityId) \(creditialsProvider!.identityProvider) \(creditialsProvider!.identityPoolId)")
         
-        
-        
-//        let syncClient = AWSCognito.defaultCognito()
         
     }
     

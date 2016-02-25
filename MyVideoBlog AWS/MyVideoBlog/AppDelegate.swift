@@ -21,28 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             AWSLogger.defaultLogger().logLevel = .Verbose
             
-            // Pasos minimos para chequear la validez del SDK de AWS
-        
-            let creditialsProvider = AWSCognitoCredentialsProvider(regionType: .EUWest1,
-                identityPoolId: "eu-west-1:f2ebf247-20b9-4d34-9b32-906290dbe0c3")
             
-            let configuration = AWSServiceConfiguration(region: .EUWest1, credentialsProvider: creditialsProvider)
-            AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+            // adecuamos nuestra app a los designios de Facebook
             
-        
-            let syncClient = AWSCognito.defaultCognito()
+            FBSDKApplicationDelegate.sharedInstance()
+                .application(application,
+                    didFinishLaunchingWithOptions: launchOptions)
             
-            // Create a record in a dataset and synchronize with the server
-            let dataset = syncClient.openOrCreateDataset("MisDatos")
-            dataset.setString("myValue", forKey:"myKey")
-            dataset.synchronize().continueWithBlock {(task: AWSTask!) -> AnyObject! in
-                
-                print("la paz en el mundo")
-                
-                return nil
-                
-            }
-
+            
             
             
             let notificationSettings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil )
@@ -97,6 +83,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // MARK: - Delegeados de Facebook
+    
+    
+    func application(app: UIApplication,
+        openUrl url: NSURL,
+        sourceApplication sourceApp : String,
+        annotation: AnyObject) -> Bool {
+            
+            return FBSDKApplicationDelegate.sharedInstance()
+                .application(app,
+                    openURL: url,
+                    sourceApplication: sourceApp,
+                    annotation: annotation)
+            
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 
